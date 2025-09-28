@@ -8,11 +8,9 @@ use App\Http\Controllers\SwaggerController;
 
 Route::get('/users', [SwaggerController::class, 'show']);
 
-// Authentication routes (keep these if you need them for other purposes)
 Route::post('/login', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'store']);
 Route::post('/logout', [App\Http\Controllers\Auth\AuthenticatedSessionController::class, 'destroy'])->middleware('auth:sanctum');
 
-// Protected route (requires authentication)
 Route::middleware(['auth:sanctum'])->get('/user', function (Request $request) {
     return $request->user();
 });

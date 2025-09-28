@@ -7,9 +7,9 @@ use Illuminate\Http\JsonResponse;
 
 /**
  * @OA\Info(
- *     title="Laravel Breeze API",
+ *     title="Special Topic",
  *     version="1.0.0",
- *     description="API documentation for Laravel Breeze API"
+ *     description="API documentation"
  * )
  * 
  * @OA\Server(
@@ -18,8 +18,8 @@ use Illuminate\Http\JsonResponse;
  * )
  * 
  * @OA\Tag(
- *     name="Users",
- *     description="User management endpoints"
+ *     name="GET",
+ *     description="GET endpoints"
  * )
  * 
  * @OA\Schema(
@@ -40,7 +40,7 @@ class SwaggerController extends Controller
      *     path="/users",
      *     tags={"Users"},
      *     summary="Get all users",
-     *     description="Retrieve a list of all users from the database (Public endpoint - no authentication required)",
+     *     description="Retrieve a list of all users from the database",
      *     operationId="getAllUsers",
      *     @OA\Response(
      *         response=200,
