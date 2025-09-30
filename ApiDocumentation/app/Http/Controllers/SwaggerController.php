@@ -20,6 +20,16 @@ use Illuminate\Validation\ValidationException;
  *     url=L5_SWAGGER_CONST_HOST,
  * )
  * 
+ * 
+ * @OA\SecurityScheme(
+ *     securityScheme="bearerAuth",
+ *     type="http",
+ *     scheme="bearer",
+ *     bearerFormat="JWT",
+ *     description="Enter your API token in the format: Bearer {token}"
+ * )
+ * 
+ * 
  * @OA\Tag(
  *     name="GET",
  *     description="GET endpoints"
@@ -381,4 +391,20 @@ public function updatePassword(Request $request, $id): JsonResponse
             ], 404);
         }
     }
+
+    /**
+ * @OA\Tag(
+ *     name="AUTH",
+ *     description="Authentication endpoints"
+ * )
+ */
+
+// Add this schema for the current user endpoint
+/**
+ * @OA\Schema(
+ *     schema="CurrentUser",
+ *     type="object",
+ *     @OA\Property(property="user", ref="#/components/schemas/User", description="Currently authenticated user details")
+ * )
+ */
 }
